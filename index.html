@@ -16,8 +16,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
     <style>
+            .project-info {
+            max-width: 1270px; /* Match the width of the map */
+            margin: 40px auto; /* Center the section and give space */
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            
+            background-color: #f9f9f9;
+            color: #555;
+        }
+
+        .project-info h2 {
+            font-size: 32px;
+            color: #6495ED;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+
+        .project-info img {
+            margin-top: 20px;
+            max-width: 150px; /* Adjust the size of the logo */
+            height: auto;
+        }
+        #opinions-header {
+            font-size: 28px;
+            color: #6495ED;
+            text-align: center;
+            margin: 40px 0 20px;
+            font-weight: bold;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Raleway', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
@@ -97,11 +133,25 @@
         the ecosystem service map
     </header>
     <img src="nordkette_scheme.png" alt="Scheme of the Nordkette" />
-
+  
     <div id="map-container">
         <div id="map"></div>
     </div>
-
+       
+    <div class="project-info">
+        <h2>Mapping Innsbruck's Ecosystem Services: An Interactive and Participatory Approach</h2>
+        <p style="margin-bottom: 30px;">Our project aims to create a comprehensive, participatory, and interactive map that highlights the various <strong>ecosystem services</strong> in and around Innsbruck. 
+            By mapping natural areas such as forests, rivers, and alpine meadows, the tool will showcase the vital services these ecosystems provide, including water purification, carbon storage, flood regulation, and recreational opportunities.
+            This <strong>interactive platform</strong> invites local residents, students, and visitors to explore how nature supports human well-being and contributes to sustainable urban development.
+             Through community involvement, the map will also collect insights and data from citizens, enriching the tool and fostering greater environmental awareness. 
+             Designed as both an <strong>educational resource</strong> and a <strong>practical guide for planners and policymakers</strong>, this project helps inform better decision-making for the conservation and sustainable management of Innsbruck’s natural landscapes.</p>
+             <p><strong>Course:</strong> Selected Topics in Environmental Management: Project Study</p>
+            <p class="authors"><strong>Authors:</strong> Luisa Menestrina and Amélie Meyer</p>
+        <img src="logo_uni.png" alt="University of Innsbruck Logo">
+    </div>
+<div id="opinions-header">
+    What Does the Population Say?
+</div>
     <div id="opinions">
         <div class="card">
             <h3>John Doe</h3>
