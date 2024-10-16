@@ -33,18 +33,18 @@
             font-weight: bold;
             font-family: 'Raleway', serif;
         }
+        
 
         #map-container {
             display: flex;
             justify-content: center;
             margin: 20px;
-            max-height: 600px; /* Limit map height */
             overflow: hidden; /* Prevent map from overflowing */
         }
 
         #map {
             width: 1270px;
-            height: 554px; /* Fix map height */
+            height: 800px; /* Fix map height */
             border: 4px solid #6495ED;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -82,6 +82,12 @@
             font-size: 16px;
             color: #555;
         }
+        img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto; /* Center the image */
+}
     </style>
     <title>The Ecosystem Service Map</title>
 </head>
@@ -90,6 +96,7 @@
     <header>
         the ecosystem service map
     </header>
+    <img src="/Users/amelonelie/Documents/Programme/GitHub/map-of-ecosystem-services/nordkette_scheme.png" alt="Scheme of the Nordkette" />
 
     <div id="map-container">
         <div id="map"></div>
