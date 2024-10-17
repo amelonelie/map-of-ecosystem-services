@@ -19,7 +19,7 @@
             max-width: 1270px; /* Match the width of the map */
             margin: 40px auto; /* Center the section and give space */
             padding: 20px;
-            text-align: center;
+            text-align: left;
             border-radius: 10px;
             background-color: #f9f9f9;
             color: #555;
@@ -122,12 +122,94 @@
             height: auto;
             margin: 0 auto; /* Center the image */
         }
+        .get-involved-section {
+                max-width: 800px;
+                margin: 40px auto;
+                padding: 20px;
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                text-align: left;
+            }
+
+            .get-involved-section h2 {
+                font-size: 28px;
+                color: #6495ED;
+                margin-bottom: 20px;
+                font-weight: bold;
+            }
+
+            .get-involved-section p {
+                font-size: 18px;
+                color: #555;
+                margin-bottom: 20px;
+            }
+
+            .get-involved-form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .form-group {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .form-group label {
+                display: block;
+                text-align: left;
+                font-size: 16px;
+                color: #555;
+                margin-bottom: 5px;
+            }
+
+            .form-group input,
+            .form-group select {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+                box-sizing: border-box;
+            }
+
+            .form-group input:focus,
+            .form-group select:focus {
+                border-color: #6495ED;
+                outline: none;
+            }
+
+            .form-group textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+                height: 100px;
+                box-sizing: border-box;
+            }
+
+            .submit-btn {
+                background-color: #6495ED;
+                color: white;
+                padding: 10px 20px;
+                font-size: 18px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            .submit-btn:hover {
+                background-color: #4169E1;
+            }
     </style>
     <title>The Map of Ecosystem Services</title>
 </head>
 <body>
     <header>
-        The Ecosystem Service Map
+        The Map of Ecosystem Services
     </header>
     
     <img src="nordkette_scheme.png" alt="Scheme of the Nordkette" />
@@ -135,18 +217,6 @@
     <!-- Map Container -->
     <div id="map-container">
         <div id="map"></div>
-    </div>
-
-    <!-- Project Information Section -->
-    <div class="project-info">
-        <h2>Mapping Innsbruck's Ecosystem Services: An Interactive and Participatory Approach</h2>
-        <p style="margin-bottom: 30px;">
-            Our project aims to create a comprehensive, participatory, and interactive map that highlights the various 
-            <strong>ecosystem services</strong> in and around Innsbruck.
-        </p>
-        <p><strong>Course:</strong> Current Aspects in Environmental Management: Project Study</p>
-        <p class="authors"><strong>Authors:</strong> Luisa Menestrina and Amélie Meyer</p>
-        <img src="logo_uni.png" alt="University of Innsbruck Logo">
     </div>
 
     <!-- Opinions Header -->
@@ -169,6 +239,65 @@
             <p>"The design is user-friendly, I love the interactive features."</p>
         </div>
     </div>
+  <!-- Get Involved Section -->
+  <section class="get-involved-section">
+    <h2>Get Involved</h2>
+    <h3>Why Your Participation Matters</h3>
+    <p>Your input is crucial in helping us create a comprehensive map of Innsbruck’s ecosystem services.
+         By sharing your knowledge of local natural areas, you contribute to a better understanding of how these spaces benefit our community.</p>
+    <h3>How You Can Participate</h3>    
+    <p>It’s simple! Just follow these steps to contribute:</p>
+    <ol>
+        <li><strong>Enter the location name:</strong> Share a natural spot in or around Innsbruck that you think provides valuable ecosystem services.</li>
+        <li><strong>Select the ecosystem service category:</strong> Choose whether this location supports provisioning, regulating and maintenance, or cultural services.</li>
+        <li><strong>Enter the coordinates if you know them.</strong></li>
+    </ol>
+    <p>By adding your knowledge, you help create a more detailed, community-driven map of Innsbruck’s Ecosystem Services. Thank you for your contribution!</p>
+</div> 
+    <form class="get-involved-form">
+        <!-- Location Name Field -->
+        <div class="form-group">
+            <label for="location-name">Name of the Location:</label>
+            <input type="text" id="location-name" placeholder="Enter the name of the location" required>
+        </div>
+
+        <!-- Ecosystem Service Category Field -->
+        <div class="form-group">
+            <label for="ecosystem-category">Category of Ecosystem Service:</label>
+            <select id="ecosystem-category" required>
+                <option value="">Select an ecosystem service</option>
+                <option value="provisioning">Provisioning Services</option>
+                <option value="regulating">Regulating and Maintenance Services</option>
+                <option value="cultural">Cultural Services</option>
+            </select>
+        </div>
+
+        <!-- Coordinates Field -->
+        <div class="form-group">
+            <label for="coordinates">Coordinates (if available):</label>
+            <input type="text" id="coordinates" placeholder="Enter coordinates (e.g., 47.2692, 11.4041)">
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+            <button type="submit" class="submit-btn">Send</button>
+        </div>
+    </form>
+</section>
+    <!-- Project Information Section -->
+    <div class="project-info">
+        <h2>About this Website</h2>
+        <h3>Mapping Innsbruck's Ecosystem Services: An Interactive and Participatory Approach</h3>
+        <p style="margin-bottom: 30px;">Our project aims to create a comprehensive, participatory, and interactive map that highlights the various <strong>ecosystem services</strong> in and around Innsbruck. 
+            By mapping natural areas such as forests, rivers, and alpine meadows, the tool will showcase the vital services these ecosystems provide, including water purification, carbon storage, flood regulation, and recreational opportunities.
+            This <strong>interactive platform</strong> invites local residents, students, and visitors to explore how nature supports human well-being and contributes to sustainable urban development.
+             Through community involvement, the map will also collect insights and data from citizens, enriching the tool and fostering greater environmental awareness. 
+             Designed as both an <strong>educational resource</strong> and a <strong>practical guide for planners and policymakers</strong> this project helps inform better decision-making for the conservation and sustainable management of Innsbruck’s natural landscapes.</p>
+        <p><strong>Course:</strong> Current Aspects in Environmental Management: Project Study</p>
+        <p class="authors"><strong>Authors:</strong> Luisa Menestrina and Amélie Meyer</p>
+        <img src="logo_uni.png" alt="University of Innsbruck Logo">
+    </div>
+
 
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
