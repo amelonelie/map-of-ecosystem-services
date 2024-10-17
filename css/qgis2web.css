@@ -60,7 +60,7 @@
         .leaflet-tooltip-left:before, .leaflet-tooltip-right:before {
             border: 0px;
         }
-        }
+        
         .fa, .leaflet-container, a {
             color: #444444 !important;
         }
@@ -188,3 +188,7 @@
         .leaflet-popup-pane {
             z-index: 700;
         }
+        .leaflet-control-layers-expanded .leaflet-control-layers-toggle {
+            display: none;
+        }
+        

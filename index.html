@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,13 +15,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
     <style>
-            .project-info {
+        .project-info {
             max-width: 1270px; /* Match the width of the map */
             margin: 40px auto; /* Center the section and give space */
             padding: 20px;
             text-align: center;
             border-radius: 10px;
-            
             background-color: #f9f9f9;
             color: #555;
         }
@@ -38,12 +36,12 @@
             margin: 10px 0;
         }
 
-
         .project-info img {
             margin-top: 20px;
             max-width: 150px; /* Adjust the size of the logo */
             height: auto;
         }
+
         #opinions-header {
             font-size: 28px;
             color: #6495ED;
@@ -70,7 +68,6 @@
             font-family: 'Raleway', serif;
         }
         
-
         #map-container {
             display: flex;
             justify-content: center;
@@ -118,40 +115,46 @@
             font-size: 16px;
             color: #555;
         }
-        img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto; /* Center the image */
-}
-    </style>
-    <title>The Ecosystem Service Map</title>
-</head>
 
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto; /* Center the image */
+        }
+    </style>
+    <title>The Map of Ecosystem Services</title>
+</head>
 <body>
     <header>
-        the ecosystem service map
+        The Ecosystem Service Map
     </header>
+    
     <img src="nordkette_scheme.png" alt="Scheme of the Nordkette" />
-  
+
+    <!-- Map Container -->
     <div id="map-container">
         <div id="map"></div>
     </div>
-       
+
+    <!-- Project Information Section -->
     <div class="project-info">
         <h2>Mapping Innsbruck's Ecosystem Services: An Interactive and Participatory Approach</h2>
-        <p style="margin-bottom: 30px;">Our project aims to create a comprehensive, participatory, and interactive map that highlights the various <strong>ecosystem services</strong> in and around Innsbruck. 
-            By mapping natural areas such as forests, rivers, and alpine meadows, the tool will showcase the vital services these ecosystems provide, including water purification, carbon storage, flood regulation, and recreational opportunities.
-            This <strong>interactive platform</strong> invites local residents, students, and visitors to explore how nature supports human well-being and contributes to sustainable urban development.
-             Through community involvement, the map will also collect insights and data from citizens, enriching the tool and fostering greater environmental awareness. 
-             Designed as both an <strong>educational resource</strong> and a <strong>practical guide for planners and policymakers</strong>, this project helps inform better decision-making for the conservation and sustainable management of Innsbruck’s natural landscapes.</p>
-             <p><strong>Course:</strong> Selected Topics in Environmental Management: Project Study</p>
-            <p class="authors"><strong>Authors:</strong> Luisa Menestrina and Amélie Meyer</p>
+        <p style="margin-bottom: 30px;">
+            Our project aims to create a comprehensive, participatory, and interactive map that highlights the various 
+            <strong>ecosystem services</strong> in and around Innsbruck.
+        </p>
+        <p><strong>Course:</strong> Current Aspects in Environmental Management: Project Study</p>
+        <p class="authors"><strong>Authors:</strong> Luisa Menestrina and Amélie Meyer</p>
         <img src="logo_uni.png" alt="University of Innsbruck Logo">
     </div>
-<div id="opinions-header">
-    What Does the Population Say?
-</div>
+
+    <!-- Opinions Header -->
+    <div id="opinions-header">
+        What Does the Population Say?
+    </div>
+
+    <!-- Opinions Section -->
     <div id="opinions">
         <div class="card">
             <h3>John Doe</h3>
@@ -167,84 +170,784 @@
         </div>
     </div>
 
-    <script src="js/qgis2web_expressions.js"></script>
-    <script src="js/leaflet.js"></script>
-    <script src="js/L.Control.Layers.Tree.min.js"></script>
-    <script src="js/leaflet.rotatedMarker.js"></script>
-    <script src="js/leaflet.pattern.js"></script>
-    <script src="js/leaflet-hash.js"></script>
-    <script src="js/Autolinker.min.js"></script>
-    <script src="js/rbush.min.js"></script>
-    <script src="js/labelgun.min.js"></script>
-    <script src="js/labels.js"></script>
-
-    <script>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/L.Control.Layers.Tree.min.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/InnsbruckCity_1.js"></script>
+        <script src="data/landuse_2.js"></script>
+        <script>
         var map = L.map('map', {
-            zoomControl: false,
-            maxZoom: 28,
-            minZoom: 1
-        }).fitBounds([
-            [47.255138918704056, 11.377412119969355],
-            [47.272001027545, 11.41443503195323]
-        ]);
+            zoomControl:false, maxZoom:28, minZoom:1
+        }).fitBounds([[47.20195982091244,11.21772493130108],[47.34829596955916,11.539095080402069]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
-        var autolinker = new Autolinker({
-            truncate: {
-                length: 30,
-                location: 'smart'
-            }
-        });
-
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        // remove popup's row if "visible-with-data"
         function removeEmptyRowsFromPopupContent(content, feature) {
-            var tempDiv = document.createElement('div');
-            tempDiv.innerHTML = content;
-            var rows = tempDiv.querySelectorAll('tr');
-            for (var i = 0; i < rows.length; i++) {
-                var td = rows[i].querySelector('td.visible-with-data');
-                var key = td ? td.id : '';
-                if (td && td.classList.contains('visible-with-data') && feature.properties[key] == null) {
-                    rows[i].parentNode.removeChild(rows[i]);
-                }
-            }
-            return tempDiv.innerHTML;
+         var tempDiv = document.createElement('div');
+         tempDiv.innerHTML = content;
+         var rows = tempDiv.querySelectorAll('tr');
+         for (var i = 0; i < rows.length; i++) {
+             var td = rows[i].querySelector('td.visible-with-data');
+             var key = td ? td.id : '';
+             if (td && td.classList.contains('visible-with-data') && feature.properties[key] == null) {
+                 rows[i].parentNode.removeChild(rows[i]);
+             }
+         }
+         return tempDiv.innerHTML;
         }
-
-        function addClassToPopupIfMedia(content, popup) {
-            var tempDiv = document.createElement('div');
-            tempDiv.innerHTML = content;
-            if (tempDiv.querySelector('td img')) {
-                popup._contentNode.classList.add('media');
-                setTimeout(function () {
-                    popup.update();
-                }, 10);
-            } else {
-                popup._contentNode.classList.remove('media');
-            }
-        }
-
+        // add class to format popup if it contains media
+		function addClassToPopupIfMedia(content, popup) {
+			var tempDiv = document.createElement('div');
+			tempDiv.innerHTML = content;
+			if (tempDiv.querySelector('td img')) {
+				popup._contentNode.classList.add('media');
+					// Delay to force the redraw
+					setTimeout(function() {
+						popup.update();
+					}, 10);
+			} else {
+				popup._contentNode.classList.remove('media');
+			}
+		}
+        var title = new L.Control({'position':'topright'});
+        title.onAdd = function (map) {
+            this._div = L.DomUtil.create('div', 'info');
+            this.update();
+            return this._div;
+        };
+        title.update = function () {
+            this._div.innerHTML = '<h2>The Map of Ecosystem Services</h2>';
+        };
+        title.addTo(map);
         var zoomControl = L.control.zoom({
             position: 'topleft'
         }).addTo(map);
         var bounds_group = new L.featureGroup([]);
-
-        function setBounds() {}
-
-        map.createPane('pane_TopPlusOpenWebGrauTMS_0');
-        map.getPane('pane_TopPlusOpenWebGrauTMS_0').style.zIndex = 400;
-        var layer_TopPlusOpenWebGrauTMS_0 = L.tileLayer('https://sgx.geodatenzentrum.de/wmts_topplus_open/tile/1.0.0/web_grau/default/WEBMERCATOR/{z}/{y}/{x}.png', {
-            pane: 'pane_TopPlusOpenWebGrauTMS_0',
+        function setBounds() {
+        }
+        map.createPane('pane_OSMStandard_0');
+        map.getPane('pane_OSMStandard_0').style.zIndex = 400;
+        var layer_OSMStandard_0 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            pane: 'pane_OSMStandard_0',
             opacity: 1.0,
-            attribution: '',
+            attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
             minZoom: 1,
             maxZoom: 28,
             minNativeZoom: 0,
             maxNativeZoom: 19
         });
-        layer_TopPlusOpenWebGrauTMS_0;
-        map.addLayer(layer_TopPlusOpenWebGrauTMS_0);
-        setBounds();
-    </script>
-</body>
+        layer_OSMStandard_0;
+        map.addLayer(layer_OSMStandard_0);
+        function pop_InnsbruckCity_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NR'] !== null ? autolinker.link(feature.properties['NR'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BEZEICH'] !== null ? autolinker.link(feature.properties['BEZEICH'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
 
+        function style_InnsbruckCity_1_0() {
+            return {
+                pane: 'pane_InnsbruckCity_1',
+                opacity: 1,
+                color: 'rgba(247,247,247,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(252,233,79,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_InnsbruckCity_1');
+        map.getPane('pane_InnsbruckCity_1').style.zIndex = 401;
+        map.getPane('pane_InnsbruckCity_1').style['mix-blend-mode'] = 'normal';
+        var layer_InnsbruckCity_1 = new L.geoJson(json_InnsbruckCity_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_InnsbruckCity_1',
+            layerName: 'layer_InnsbruckCity_1',
+            pane: 'pane_InnsbruckCity_1',
+            onEachFeature: pop_InnsbruckCity_1,
+            style: style_InnsbruckCity_1_0,
+        });
+        bounds_group.addLayer(layer_InnsbruckCity_1);
+        map.addLayer(layer_InnsbruckCity_1);
+        function pop_landuse_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(feature.properties['OBJECTID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJEKT'] !== null ? autolinker.link(feature.properties['OBJEKT'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJEKTBEZE'] !== null ? autolinker.link(feature.properties['OBJEKTBEZE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">KLASSE</th>\
+                        <td>' + (feature.properties['KLASSE'] !== null ? autolinker.link(feature.properties['KLASSE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['GEMNR'] !== null ? autolinker.link(feature.properties['GEMNR'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['STAND'] !== null ? autolinker.link(feature.properties['STAND'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ERFASSUNGS'] !== null ? autolinker.link(feature.properties['ERFASSUNGS'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CREATETIME'] !== null ? autolinker.link(feature.properties['CREATETIME'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['UPDATETIME'] !== null ? autolinker.link(feature.properties['UPDATETIME'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Shape__Are'] !== null ? autolinker.link(feature.properties['Shape__Are'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Shape__Len'] !== null ? autolinker.link(feature.properties['Shape__Len'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NR'] !== null ? autolinker.link(feature.properties['NR'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BEZEICH'] !== null ? autolinker.link(feature.properties['BEZEICH'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_landuse_2_0(feature) {
+            switch(String(feature.properties['KLASSE'])) {
+                case 'Ackerland':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,191,111,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Almen':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,127,0,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Alpine Biotope':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(216,62,59,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Anlagen: Erholung, Freizeit':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(142,13,217,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Anlagen: Grünanlagen':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(52,103,223,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Autobahn':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(111,111,111,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Auwaldgebiete':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(80,231,130,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Bahnlinie Hochrangig':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(111,111,111,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Bahnlinie Lokal':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(111,111,111,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Feuchtgebiete':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(218,80,121,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Flugverkehr':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(111,111,111,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Forst- und Wirtschaftsweg':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(72,197,211,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Forstliche Strauchflächen (Wald)':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(51,160,44,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Gewässer fließend':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(12,121,243,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Gewässer stehend':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(12,121,243,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Gewässerbiotope':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(12,121,243,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Grünland':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(202,194,47,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Hochwald':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(51,160,44,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Kulturlandschaft':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(30,56,228,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Land- und Bundesstraßen':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(111,111,111,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Landwirtschaftliche Freihalteflächen':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(26,215,58,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Moore':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(128,34,228,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Örtliches Strassennetz':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(111,111,111,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Siedlungstyp: Anwesen':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(111,111,111,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Siedlungstyp: Industrie und Gewerbe':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(111,111,111,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Siedlungstyp: Mischnutzung allgemein':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(111,111,111,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Siedlungstyp: Mischnutzung Landwirtschaft':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(54,211,177,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Siedlungstyp: Mischnutzung Tourismus':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(111,111,111,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Siedlungstyp: Sonstige Nutzung':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(180,216,73,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Siedlungstyp: Sonstige Nutzung: Handel':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(111,111,111,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Siedlungstyp: Sonstige Nutzung: Landwirtschaft':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(232,129,32,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Siedlungstyp: Sonstige Nutzung: Tourismus':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(132,239,200,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Siedlungstyp: Wohnnutzung':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(111,111,111,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Spezialkulturen':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(206,218,99,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Sport und Erholung: Golfplatz':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(111,109,223,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Sport und Erholung: Schianlage':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(94,216,96,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Sport und Erholung: Sportanlage':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(82,161,213,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Wald':
+                    return {
+                pane: 'pane_landuse_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(145,240,107,1.0)',
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_landuse_2');
+        map.getPane('pane_landuse_2').style.zIndex = 402;
+        map.getPane('pane_landuse_2').style['mix-blend-mode'] = 'normal';
+        var layer_landuse_2 = new L.geoJson(json_landuse_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_landuse_2',
+            layerName: 'layer_landuse_2',
+            pane: 'pane_landuse_2',
+            onEachFeature: pop_landuse_2,
+            style: style_landuse_2_0,
+        });
+        bounds_group.addLayer(layer_landuse_2);
+        map.addLayer(layer_landuse_2);
+        var baseMaps = {};
+        var overlaysTree = [
+            {label: 'landuse<br /><table><tr><td style="text-align: center;"><img src="legend/landuse_2_Ackerland0.png" /></td><td>Ackerland</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_Almen1.png" /></td><td>Almen</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_AlpineBiotope2.png" /></td><td>Alpine Biotope</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_AnlagenErholungFreizeit3.png" /></td><td>Anlagen: Erholung, Freizeit</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_AnlagenGrünanlagen4.png" /></td><td>Anlagen: Grünanlagen</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_Autobahn5.png" /></td><td>Autobahn</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_Auwaldgebiete6.png" /></td><td>Auwaldgebiete</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_BahnlinieHochrangig7.png" /></td><td>Bahnlinie Hochrangig</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_BahnlinieLokal8.png" /></td><td>Bahnlinie Lokal</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_Feuchtgebiete9.png" /></td><td>Feuchtgebiete</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_Flugverkehr10.png" /></td><td>Flugverkehr</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_ForstundWirtschaftsweg11.png" /></td><td>Forst- und Wirtschaftsweg</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_ForstlicheStrauchflächenWald12.png" /></td><td>Forstliche Strauchflächen (Wald)</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_Gewässerfließend13.png" /></td><td>Gewässer fließend</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_Gewässerstehend14.png" /></td><td>Gewässer stehend</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_Gewässerbiotope15.png" /></td><td>Gewässerbiotope</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_Grünland16.png" /></td><td>Grünland</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_Hochwald17.png" /></td><td>Hochwald</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_Kulturlandschaft18.png" /></td><td>Kulturlandschaft</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_LandundBundesstraßen19.png" /></td><td>Land- und Bundesstraßen</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_LandwirtschaftlicheFreihalteflächen20.png" /></td><td>Landwirtschaftliche Freihalteflächen</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_Moore21.png" /></td><td>Moore</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_ÖrtlichesStrassennetz22.png" /></td><td>Örtliches Strassennetz</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_SiedlungstypAnwesen23.png" /></td><td>Siedlungstyp: Anwesen</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_SiedlungstypIndustrieundGewerbe24.png" /></td><td>Siedlungstyp: Industrie und Gewerbe</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_SiedlungstypMischnutzungallgemein25.png" /></td><td>Siedlungstyp: Mischnutzung allgemein</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_SiedlungstypMischnutzungLandwirtschaft26.png" /></td><td>Siedlungstyp: Mischnutzung Landwirtschaft</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_SiedlungstypMischnutzungTourismus27.png" /></td><td>Siedlungstyp: Mischnutzung Tourismus</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_SiedlungstypSonstigeNutzung28.png" /></td><td>Siedlungstyp: Sonstige Nutzung</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_SiedlungstypSonstigeNutzungHandel29.png" /></td><td>Siedlungstyp: Sonstige Nutzung: Handel</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_SiedlungstypSonstigeNutzungLandwirtschaft30.png" /></td><td>Siedlungstyp: Sonstige Nutzung: Landwirtschaft</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_SiedlungstypSonstigeNutzungTourismus31.png" /></td><td>Siedlungstyp: Sonstige Nutzung: Tourismus</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_SiedlungstypWohnnutzung32.png" /></td><td>Siedlungstyp: Wohnnutzung</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_Spezialkulturen33.png" /></td><td>Spezialkulturen</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_SportundErholungGolfplatz34.png" /></td><td>Sport und Erholung: Golfplatz</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_SportundErholungSchianlage35.png" /></td><td>Sport und Erholung: Schianlage</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_SportundErholungSportanlage36.png" /></td><td>Sport und Erholung: Sportanlage</td></tr><tr><td style="text-align: center;"><img src="legend/landuse_2_Wald37.png" /></td><td>Wald</td></tr></table>', layer: layer_landuse_2},
+            {label: '<img src="legend/InnsbruckCity_1.png" /> Innsbruck City', layer: layer_InnsbruckCity_1},
+            {label: "OSM Standard", layer: layer_OSMStandard_0},]
+        var lay = L.control.layers.tree(null, overlaysTree,{
+            //namedToggle: true,
+            //selectorBack: false,
+            //closedSymbol: '&#8862; &#x1f5c0;',
+            //openedSymbol: '&#8863; &#x1f5c1;',
+            //collapseAll: 'Collapse all',
+            //expandAll: 'Expand all',
+            collapsed: true,
+        });
+        lay.addTo(map);
+        setBounds();
+        </script>
+    </body>
 </html>
