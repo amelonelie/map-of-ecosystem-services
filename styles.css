@@ -229,3 +229,25 @@
         .submit-btn:hover {
             background-color: #4169E1;
         }
+
+        /* Language Button Styles */
+.lang-btn {
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 2px solid #6495ED;
+    border-radius: 5px;
+    background-color: white;
+    color: #6495ED;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn.active {
+    background-color: #6495ED;
+    color: white;
+}
+
+.lang-btn:hover {
+    background-color: #4169E1;
+    color: white;
+}

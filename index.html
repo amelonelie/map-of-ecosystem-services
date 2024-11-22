@@ -13,7 +13,17 @@
 </head>
 <body>
     <header>
-        The Map of Ecosystem Services
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
+            <h1>The Map of Ecosystem Services</h1>
+            <div style="display: flex; gap: 10px;">
+                <button id="lang-en" class="lang-btn active" data-lang="en">
+                    🇬🇧 English
+                </button>
+                <button id="lang-de" class="lang-btn" data-lang="de">
+                    🇩🇪 Deutsch
+                </button>
+            </div>
+        </div>
     </header>
     <img src="nordkette_scheme.png" alt="Scheme of the Nordkette" />
     <p>Select a Ecosystem Service Category and explore it in Innsbruck!</p>
@@ -107,23 +117,6 @@
     <p class="authors"><strong>Authors:</strong> Luisa Menestrina and Amélie Meyer</p>
     <img src="logo_uni.png" alt="University of Innsbruck Logo">
 </div>
-
-
-    <script>
-        const buttons = document.querySelectorAll('.segmented-button');
-        const iframe = document.getElementById('map-frame');
-
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                buttons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                button.classList.add('active');
-                // Change the iframe source
-                const mapFile = button.getAttribute('data-map');
-                iframe.src = mapFile;
-            });
-        });
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
