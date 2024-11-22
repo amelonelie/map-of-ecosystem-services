@@ -1,0 +1,231 @@
+       /* General Styles */
+       body {
+        font-family: 'Raleway', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        text-align: center;
+    }
+    header {
+        padding: 20px;
+        background-color: #6495ED;
+        color: white;
+        font-size: 36px;
+        font-weight: bold;
+    }
+    #button-container {
+        margin: 20px;
+    }
+    .segmented-button {
+        display: inline-block;
+        margin: 5px;
+        padding: 10px 20px;
+        border: 2px solid #6495ED;
+        border-radius: 10px;
+        background-color: white;
+        color: #6495ED;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .segmented-button.active, .segmented-button:hover {
+        background-color: #6495ED;
+        color: white;
+    }
+  
+    iframe {
+        width: 100%;
+        height: 800px;
+        border: 4px solid #6495ED;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .project-info {
+        max-width: 1270px; /* Match the width of the map */
+        margin: 40px auto; /* Center the section and give space */
+        padding: 20px;
+        text-align: left;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        color: #555;
+    }
+
+    .project-info h2 {
+        font-size: 32px;
+        color: #6495ED;
+        margin-bottom: 10px;
+    }
+
+    .project-info p {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .project-info img {
+        margin-top: 20px;
+        max-width: 150px; /* Adjust the size of the logo */
+        height: auto;
+    }
+
+    #opinions-header {
+        font-size: 28px;
+        color: #6495ED;
+        text-align: center;
+        margin: 40px 0 20px;
+        font-weight: bold;
+    }
+
+    body {
+        font-family: 'Raleway', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        overflow-x: hidden; /* Prevent horizontal overflow */
+    }
+
+    header {
+        background-color: #f9f9f9;
+        color: #6495ED;
+        padding: 30px;
+        text-align: center;
+        font-size: 44px;
+        font-weight: bold;
+        font-family: 'Raleway', serif;
+    }
+    
+    #map-container {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+        overflow: hidden; 
+    }
+
+    #map {
+        width: 100%;
+        height: 800px; 
+        border: 4px solid #6495ED;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #opinions {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 40px;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        max-width: 300px;
+        text-align: center;
+        transition: transform 0.2s;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .card h3 {
+        color: #6495ED;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        font-size: 16px;
+        color: #555;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto; /* Center the image */
+    }
+    .get-involved-section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .get-involved-section h2 {
+            font-size: 28px;
+            color: #6495ED;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .get-involved-section p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .get-involved-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-group {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            text-align: left;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #6495ED;
+            outline: none;
+        }
+
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            height: 100px;
+            box-sizing: border-box;
+        }
+
+        .submit-btn {
+            background-color: #6495ED;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #4169E1;
+        }
