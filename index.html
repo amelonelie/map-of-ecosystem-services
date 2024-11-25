@@ -22,6 +22,7 @@
             </div>
         </div>
     </header>
+
     <img src="nordkette_scheme.png" alt="Scheme of the Nordkette" />
     <p>Select a Ecosystem Service Category and explore it in Innsbruck!</p>
 
@@ -300,21 +301,7 @@
 </div>
 
 
-    <script>
-        const buttons = document.querySelectorAll('.segmented-button');
-        const iframe = document.getElementById('map-frame');
-
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                buttons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                button.classList.add('active');
-                // Change the iframe source
-                const mapFile = button.getAttribute('data-map');
-                iframe.src = mapFile;
-            });
-        });
-    </script>
+<script src="script.js"></script>
 </body>
+
 </html>

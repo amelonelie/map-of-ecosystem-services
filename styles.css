@@ -6,14 +6,16 @@
         text-align: center;
     }
     header {
+        background-color: #f9f9f9;
+        color: #6495ED;
         padding: 20px;
-        background-color: #6495ED;
-        color: white;
-        font-size: 22px;
+        text-align: center;
+        font-size: 30px;
         font-weight: bold;
+        font-family: 'Raleway', serif;
     }
     
-   
+
     .header-content {
         display: flex;
         justify-content: space-between;
@@ -23,11 +25,9 @@
     
 
     .language-switcher {
-        position: absolute;
-        top: 20px;
-        right: 20px;
+        margin-left: auto;
+        align-self: center;
     }
-
     #button-container {
         margin: 20px;
     }
@@ -104,16 +104,7 @@
         overflow-x: hidden; /* Prevent horizontal overflow */
     }
 
-    header {
-        background-color: #f9f9f9;
-        color: #6495ED;
-        padding: 30px;
-        text-align: center;
-        font-size: 44px;
-        font-weight: bold;
-        font-family: 'Raleway', serif;
-    }
-    
+
     #map-container {
         display: flex;
         justify-content: center;
@@ -264,8 +255,8 @@
 }
 
 .lang-btn.active {
-    background-color: #6495ED;
-    color: white;
+    background-color: white;
+    color: #6495ED;
 }
 
 .lang-btn:hover {
