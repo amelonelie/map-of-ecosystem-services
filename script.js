@@ -37,6 +37,73 @@ const translations = {
         }
     }
 };
+// Array containing card data
+const cardsData = [
+    // Provisioning Services
+    { frontText: "Fresh Water", backText: "Provision and storage of fresh water.", color: "#6495ED" },
+    { frontText: "Fodder", backText: "Food for domesticated animals.", color: "#6495ED" },
+    { frontText: "Food", backText: "Ecosystems provide the conditions for growing food in wild habitats and in managed agro-ecosystems, including crops, livestock, aquaculture, and wild food.", color: "#6495ED" },
+    { frontText: "Raw Materials", backText: "Ecosystems provide a great diversity of materials for construction, landscaping, and ornaments.", color: "#6495ED" },
+    { frontText: "Medicinal Resources", backText: "Ecosystems provide resources used for biomedical products, natural medicine, pharmaceuticals, etc.", color: "#6495ED" },
+    { frontText: "Energy", backText: "Ecosystems provide multiple means, which can be used for energy production, e.g. hydropower, wood fuel and biofuel from agricultural products.", color: "#6495ED" },
+    // Regulating and Maintaining Services
+    { frontText: "Water Cycle", backText: "Refers to the water cycling affected by plant processes in the system.", color: "#1157D9" },
+    { frontText: "Nutrient Cycle", backText: "Recycling and storage of nutrients to maintain healthy soils and productive ecosystems.", color: "#1157D9" },
+    { frontText: "Primary Production", backText: "Building of biomass.", color: "#1157D9" },
+    { frontText: "Natural Hazard Regulation", backText: "Influence of ecosystems on moderation of extreme events, e.g., storms, floods, rockfalls, or avalanches.", color: "#1157D9" },
+    { frontText: "Soil Erosion Regulation", backText: "Vegetation can prevent soil erosion to maintain arable land and to prevent damage from erosion/siltation.", color: "#1157D9" },
+    { frontText: "Water Flow Regulation", backText: "Land cover can regulate water run-off and river discharge.", color: "#1157D9" },
+    { frontText: "Pollination", backText: "Pollination of wild plants and crops.", color: "#1157D9" },
+    { frontText: "Biodiversity", backText: "The presence or absence of selected species, functional groups of species, or species composition.", color: "#1157D9" },
+    { frontText: "Habitat", backText: "The provision of suitable habitats for different species, functional groups, or processes essential for ecosystem functioning.", color: "#1157D9" },
+    { frontText: "Biological Control", backText: "Control of pests and diseases.", color: "#1157D9" },
+    { frontText: "Soil formation and fertility", backText: "Maintenance of the natural productivity of soil", color: "#1157D9" },
+    { frontText: "Water quality", backText: "Ecosystems play a role in pollution control/detoxification and filtering of dust particles", color: "#1157D9" },
+    { frontText: "Global climate regulation", backText: "Ecosystems play an important role in climate by either sequestering or emitting greenhouse gases", color: "#1157D9" },
+    { frontText: "Local climate regulation", backText: "Land cover can locally affect temperature, air moisture, wind, radiation and precipitation", color: "#1157D9" },
+    { frontText: "Air quality regulation", backText: "Maintenance of (clean) air", color: "#1157D9" },
+    // Cultural Services
+    { frontText: "Recreation", backText: "Natural landscapes and urban green spaces play a role in maintaining mental and physical health.", color: "#082B6A" },
+    { frontText: "Tourism", backText: "Nature tourism provides economic benefits and is a source of income for many countries.", color: "#082B6A" },
+    { frontText: "Aesthetic Appreciation", backText: "Attractive landscapes provide enjoyment of scenery.", color: "#082B6A" },
+    { frontText: "Spiritual Values", backText: "Ecosystems are used for religious or historic purposes and can foster a local identity and sense of belonging.", color: "#082B6A" },
+];
+
+// Function to create and append cards dynamically
+function populateCards() {
+    const cardContainer = document.getElementById("card-container");
+
+    cardsData.forEach(card => {
+        // Create card elements
+        const cardDiv = document.createElement("div");
+        cardDiv.classList.add("card");
+
+        const cardInnerDiv = document.createElement("div");
+        cardInnerDiv.classList.add("card-inner");
+
+        const cardFront = document.createElement("div");
+        cardFront.classList.add("card-front");
+        cardFront.style.backgroundColor = card.color;
+        cardFront.textContent = card.frontText;
+
+        const cardBack = document.createElement("div");
+        cardBack.classList.add("card-back");
+        cardBack.textContent = card.backText;
+
+        // Append elements
+        cardInnerDiv.appendChild(cardFront);
+        cardInnerDiv.appendChild(cardBack);
+        cardDiv.appendChild(cardInnerDiv);
+        cardContainer.appendChild(cardDiv);
+    });
+}
+
+// Populate the cards on page load
+document.addEventListener("DOMContentLoaded", populateCards);
+
+
+
+
 
 // Function to switch between languages
 function switchLanguage(lang) {
