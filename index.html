@@ -13,22 +13,211 @@
 </head>
 <body>
     <header>
-        The Map of Ecosystem Services
+        <div class="header-content">
+            <h1>The Map of Ecosystem Services</h1>
+            <div class="language-switcher">
+                <button id="lang-btn" class="lang-btn active" data-lang="en">
+                    🇬🇧 English
+                </button>
+            </div>
+        </div>
     </header>
     <img src="nordkette_scheme.png" alt="Scheme of the Nordkette" />
     <p>Select a Ecosystem Service Category and explore it in Innsbruck!</p>
 
-    <!-- Button Container -->
-    <div id="button-container">
-        <button class="segmented-button active" data-map="provisioning_map/index.html">Provisioning Ecosystem Services</button>
-        <button class="segmented-button" data-map="cultural_map/index.html">Cultural Ecosystem Services</button>
-        <button class="segmented-button" data-map="regulating_map/index.html">Regulating and Maintenance Ecosystem Services</button>
-    </div>
-
+  <!-- Button Container -->
+<div id="button-container">
+    <button class="segmented-button active" 
+            data-map="provisioning_map/index.html" 
+            data-original-map="provisioning_map/index.html">
+        Provisioning Ecosystem Services
+    </button>
+    <button class="segmented-button" 
+            data-map="cultural_map/index.html" 
+            data-original-map="cultural_map/index.html">
+        Cultural Ecosystem Services
+    </button>
+    <button class="segmented-button" 
+            data-map="regulating_map/index.html" 
+            data-original-map="regulating_map/index.html">
+        Regulating and Maintenance Ecosystem Services
+    </button>
+</div>
     <!-- Map Container -->
     <div id="map-container">
         <iframe id="map-frame" src="provisioning_map/index.html"></iframe>
     </div>
+
+<div id = "es-definition">
+    Definition of 25 selected Ecosystem Services
+</div>
+  
+<p>According to <a href="https://link.springer.com/article/10.1007/s10113-015-0759-4" target="_blank">Haida et al., 2015</a></p>
+<div id="ES-container">
+    <button disabled class="ESbutton" style="background-color: #6495ED">Provisioning Ecosystem Services</button>
+    <button disabled class="ESbutton" style="background-color: #1157D9"> Cultural Ecosystem Services</button>
+    <button disabled class="ESbutton" style="background-color: #082B6A">Regulating and Maintenance Ecosystem Services</button>
+</div>
+
+<div class="card-container">
+    <!-- Provisioning Services -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front"style="background-color: #6495ED">Fresh Water</div>
+            <div class="card-back">Provision and storage of fresh water.</div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front" style="background-color: #6495ED">Fodder</div>
+            <div class="card-back">Food for domesticated animals.</div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front" style="background-color: #6495ED">Food</div>
+            <div class="card-back">
+                Ecosystems provide the conditions for growing food in wild habitats and in managed agro-ecosystems, including crops, livestock, aquaculture, and wild food.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front" style="background-color: #6495ED">Raw Materials</div>
+            <div class="card-back">
+                Ecosystems provide a great diversity of materials for construction, landscaping, and ornaments.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front" style="background-color: #6495ED">Medicinal Resources</div>
+            <div class="card-back">
+                Ecosystems provide resources used for biomedical products, natural medicine, pharmaceuticals, etc.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front" style="background-color: #6495ED">Energy</div>
+            <div class="card-back">
+                Ecosystems provide multiple means, which can be used for energy production, e.g. hydropower, wood fuel and biofuel from agricultural products.
+            </div>
+        </div>
+    </div>
+    <!-- Regulating and Maintaining Services -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front" style="background-color: #1157D9" >Water Cycle</div>
+            <div class="card-back">
+                Refers to the water cycling affected by plant processes in the system.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front" style="background-color: #1157D9">Nutrient Cycle</div>
+            <div class="card-back">
+                Recycling and storage of nutrients to maintain healthy soils and productive ecosystems.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front" style="background-color: #1157D9">Primary Production</div>
+            <div class="card-back">Building of biomass.</div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front" style="background-color: #1157D9">Natural Hazard Regulation</div>
+            <div class="card-back">
+                Influence of ecosystems on moderation of extreme events, e.g., storms, floods, rockfalls, or avalanches.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front" style="background-color: #1157D9">Soil Erosion Regulation</div>
+            <div class="card-back">
+                Vegetation can prevent soil erosion to maintain arable land and to prevent damage from erosion/siltation.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front" style="background-color: #1157D9">Water Flow Regulation</div>
+            <div class="card-back">
+                Land cover can regulate water run-off and river discharge.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-inner" >
+            <div class="card-front" style="background-color: #1157D9">Pollination</div>
+            <div class="card-back">
+                Pollination of wild plants and crops.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front" style="background-color: #1157D9">Biodiversity</div>
+            <div class="card-back">
+                The presence or absence of selected species, functional groups of species, or species composition.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front" style="background-color: #1157D9">Habitat</div>
+            <div class="card-back">
+                The provision of suitable habitats for different species, functional groups, or processes essential for ecosystem functioning.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front" style="background-color: #1157D9">Biological Control</div>
+            <div class="card-back">
+                Control of pests and diseases.
+            </div>
+        </div>
+    </div>
+    <!-- Cultural Services -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front" style="background-color: #082B6A">Recreation</div>
+            <div class="card-back">
+                Natural landscapes and urban green spaces play a role in maintaining mental and physical health.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front" style="background-color: #082B6A">Tourism</div>
+            <div class="card-back">
+                Nature tourism provides economic benefits and is a source of income for many countries.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front" style="background-color: #082B6A">Aesthetic Appreciation</div>
+            <div class="card-back">
+                Attractive landscapes provide enjoyment of scenery.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front" style="background-color: #082B6A">Spiritual Values</div>
+            <div class="card-back">
+                Ecosystems are used for religious or historic purposes and can foster a local identity and sense of belonging.
+            </div>
+        </div>
+    </div>
+</div>
  <!-- Opinions Header -->
  <div id="opinions-header">
     What Does the Population Say?
@@ -36,15 +225,15 @@
 
 <!-- Opinions Section -->
 <div id="opinions">
-    <div class="card">
+    <div class="opinions_card">
         <h3>John Doe</h3>
         <p>"This map is a great representation of our natural resources. Very insightful!"</p>
     </div>
-    <div class="card">
+    <div class="opinions_card">
         <h3>Jane Smith</h3>
         <p>"I appreciate the details and accuracy. It helps to better understand our environment."</p>
     </div>
-    <div class="card">
+    <div class="opinions_card">
         <h3>Emily Johnson</h3>
         <p>"The design is user-friendly, I love the interactive features."</p>
     </div>
@@ -68,7 +257,7 @@
     action="https://formspree.io/f/mdkodjde"
     method="POST" 
     class="get-involved-form">
-    <!-- Add your form fields here -->
+
     <div class="form-group">
         <label for="location-name">Name of the Location:</label>
         <input type="text" id="location-name" name="location-name" placeholder="Enter the name of the location" required>
@@ -94,6 +283,8 @@
     </div>
 </form>
 </section>
+
+
 <!-- Project Information Section -->
 <div class="project-info">
     <h2>About this Website</h2>

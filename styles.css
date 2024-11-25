@@ -1,5 +1,4 @@
-       /* General Styles */
-       body {
+    body {
         font-family: 'Raleway', sans-serif;
         margin: 0;
         padding: 0;
@@ -10,9 +9,25 @@
         padding: 20px;
         background-color: #6495ED;
         color: white;
-        font-size: 36px;
+        font-size: 22px;
         font-weight: bold;
     }
+    
+   
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+    
+
+    .language-switcher {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
     #button-container {
         margin: 20px;
     }
@@ -74,7 +89,13 @@
         margin: 40px 0 20px;
         font-weight: bold;
     }
-
+#es-definition {
+    font-size: 28px;
+    color: #6495ED;
+    text-align: center;
+    margin: 40px 0 20px;
+    font-weight: bold;
+}
     body {
         font-family: 'Raleway', sans-serif;
         margin: 0;
@@ -116,7 +137,7 @@
         flex-wrap: wrap;
     }
 
-    .card {
+    .opinions_card {
         background-color: white;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -126,17 +147,17 @@
         transition: transform 0.2s;
     }
 
-    .card:hover {
+    .opinions_card:hover {
         transform: scale(1.05);
     }
 
-    .card h3 {
+    .opinions_card h3 {
         color: #6495ED;
         font-size: 20px;
         margin-bottom: 10px;
     }
 
-    .card p {
+    .opinions_card p {
         font-size: 16px;
         color: #555;
     }
@@ -229,3 +250,129 @@
         .submit-btn:hover {
             background-color: #4169E1;
         }
+
+        /* Language Button Styles */
+.lang-btn {
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 2px solid #6495ED;
+    border-radius: 5px;
+    background-color: white;
+    color: #6495ED;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn.active {
+    background-color: #6495ED;
+    color: white;
+}
+
+.lang-btn:hover {
+    background-color: #4169E1;
+    color: white;
+}
+
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.card {
+    perspective: 1000px;
+    width: 100%;
+    height: 150px;
+    position: relative;
+    border-radius: 10px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03); 
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border: 2px solid #1e90ff; 
+    border-radius: 12px; 
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    backface-visibility: hidden;
+    width: 100%; 
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box; 
+    border-radius: 10px; 
+}
+
+.card-front {
+    color: white;
+}
+
+
+.card-back {
+    background-color: #e6f2ff; 
+    transform: rotateY(180deg);
+}
+
+/* Responsive Layout */
+@media (max-width: 1200px) {
+    .card-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns for medium screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for very small screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .card-container {
+        grid-template-columns: 1fr; /* Single column for extra small screens */
+    }
+}
+
+button[disabled] {
+    background-color: white; 
+
+    border: 2px solid #6495ED; 
+
+ display: inline-block;
+ margin: 5px;
+ padding: 10px 20px;
+
+ border-radius: 10px;
+ background-color: white;
+ color: white;
+ font-size: 16px;
+
+
+}
