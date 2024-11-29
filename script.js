@@ -18,6 +18,20 @@ const translations = {
         projectInfo: {
             title: "About this Website",
             description: "Our project aims to create a comprehensive, participatory, and interactive map that highlights the various ecosystem services in and around Innsbruck. By mapping natural areas such as forests, rivers, and alpine meadows, the tool will showcase the vital services these ecosystems provide, including water purification, carbon storage, flood regulation, and recreational opportunities. This interactive platform invites local residents, students, and visitors to explore how nature supports human well-being and contributes to sustainable urban development. Through community involvement, the map will also collect insights and data from citizens, enriching the tool and fostering greater environmental awareness. Designed as both an educational resource and a practical guide for planners and policymakers this project helps inform better decision-making for the conservation and sustainable management of Innsbruck’s natural landscapes."
+        }, 
+        buttons: [
+            "Provisioning Ecosystem Services",
+            "Cultural Ecosystem Services",
+            "Regulating and Maintenance Ecosystem Services"
+        ], 
+        esDefinition: {
+            title: "Definition of 25 selected Ecosystem Services",
+            citation: "According to Haida et al., 2015",
+            buttons: [
+                "Provisioning Ecosystem Services",
+                "Cultural Ecosystem Services",
+                "Regulating and Maintenance Ecosystem Services"
+            ]
         }
     },
     de: {
@@ -34,41 +48,24 @@ const translations = {
         projectInfo: {
             title: "Über diese Webseite",
             description: "Unser Projekt zielt darauf ab, eine umfassende, partizipative und interaktive Karte zu erstellen, die die verschiedenen Ökosystemdienstleistungen in und um Innsbruck aufzeigt. Durch die Kartierung von Gebieten wie Wäldern, Flüssen und Almwiesen wird das Tool die lebenswichtigen Leistungen dieser Ökosysteme aufzeigen, darunter Wasserreinigung, Kohlenstoffspeicherung, Hochwasserregulierung und Erholungsmöglichkeiten. Diese interaktive Plattform lädt Anwohner, Studierende und Besuchende dazu ein, zu erkunden, wie die Natur das menschliche Wohlbefinden unterstützt und zu einer nachhaltigen Stadtentwicklung beiträgt. Durch die Beteiligung der Bevölkerung wird die Karte auch Erkenntnisse und Daten von Bürgern sammeln, die das Projekt bereichern und ein größeres Umweltbewusstsein fördern. Das Projekt ist sowohl als pädagogische Ressource als auch als praktischer Leitfaden für Planer und politische Entscheidungsträger konzipiert und trägt zu einer besseren Entscheidungsfindung für die Erhaltung und nachhaltige Bewirtschaftung der Innsbrucker Naturlandschaften bei."
+        },
+        buttons: [
+            "Bereitstellende Ökosystemdienstleistungen",
+            "Kulturelle Ökosystemdienstleistungen",
+            "Regulierende und unterstützende Ökosystemdienstleistungen"
+        ], 
+        esDefinition: {
+            title: "Definition von 25 ausgewählten Ökosystemdienstleistungen",
+            citation: "Laut Haida et al., 2015",
+            buttons: [
+                "Bereitstellende Ökosystemdienstleistungen",
+                "Kulturelle Ökosystemdienstleistungen",
+                "Regulierende und unterstützende Ökosystemdienstleistungen"
+            ]
         }
     }
 };
-// Array containing card data
-/*const cardsData = [
-    // Provisioning Services
-    { frontText: "Fresh Water", backText: "Provision and storage of fresh water.", color: "#6495ED" },
-    { frontText: "Fodder", backText: "Food for domesticated animals.", color: "#6495ED" },
-    { frontText: "Food", backText: "Ecosystems provide the conditions for growing food in wild habitats and in managed agro-ecosystems, including crops, livestock, aquaculture, and wild food.", color: "#6495ED" },
-    { frontText: "Raw Materials", backText: "Ecosystems provide a great diversity of materials for construction, landscaping, and ornaments.", color: "#6495ED" },
-    { frontText: "Medicinal Resources", backText: "Ecosystems provide resources used for biomedical products, natural medicine, pharmaceuticals, etc.", color: "#6495ED" },
-    { frontText: "Energy", backText: "Ecosystems provide multiple means, which can be used for energy production, e.g. hydropower, wood fuel and biofuel from agricultural products.", color: "#6495ED" },
-    // Regulating and Maintaining Services
-    { frontText: "Water Cycle", backText: "Refers to the water cycling affected by plant processes in the system.", color: "#1157D9" },
-    { frontText: "Nutrient Cycle", backText: "Recycling and storage of nutrients to maintain healthy soils and productive ecosystems.", color: "#1157D9" },
-    { frontText: "Primary Production", backText: "Building of biomass.", color: "#1157D9" },
-    { frontText: "Natural Hazard Regulation", backText: "Influence of ecosystems on moderation of extreme events, e.g., storms, floods, rockfalls, or avalanches.", color: "#1157D9" },
-    { frontText: "Soil Erosion Regulation", backText: "Vegetation can prevent soil erosion to maintain arable land and to prevent damage from erosion/siltation.", color: "#1157D9" },
-    { frontText: "Water Flow Regulation", backText: "Land cover can regulate water run-off and river discharge.", color: "#1157D9" },
-    { frontText: "Pollination", backText: "Pollination of wild plants and crops.", color: "#1157D9" },
-    { frontText: "Biodiversity", backText: "The presence or absence of selected species, functional groups of species, or species composition.", color: "#1157D9" },
-    { frontText: "Habitat", backText: "The provision of suitable habitats for different species, functional groups, or processes essential for ecosystem functioning.", color: "#1157D9" },
-    { frontText: "Biological Control", backText: "Control of pests and diseases.", color: "#1157D9" },
-    { frontText: "Soil formation and fertility", backText: "Maintenance of the natural productivity of soil", color: "#1157D9" },
-    { frontText: "Water quality", backText: "Ecosystems play a role in pollution control/detoxification and filtering of dust particles", color: "#1157D9" },
-    { frontText: "Global climate regulation", backText: "Ecosystems play an important role in climate by either sequestering or emitting greenhouse gases", color: "#1157D9" },
-    { frontText: "Local climate regulation", backText: "Land cover can locally affect temperature, air moisture, wind, radiation and precipitation", color: "#1157D9" },
-    { frontText: "Air quality regulation", backText: "Maintenance of (clean) air", color: "#1157D9" },
-    // Cultural Services
-    { frontText: "Recreation", backText: "Natural landscapes and urban green spaces play a role in maintaining mental and physical health.", color: "#082B6A" },
-    { frontText: "Tourism", backText: "Nature tourism provides economic benefits and is a source of income for many countries.", color: "#082B6A" },
-    { frontText: "Aesthetic Appreciation", backText: "Attractive landscapes provide enjoyment of scenery.", color: "#082B6A" },
-    { frontText: "Spiritual Values", backText: "Ecosystems are used for religious or historic purposes and can foster a local identity and sense of belonging.", color: "#082B6A" },
-];
-*/
+
 
 const cardTranslations = {
     en: [
@@ -136,40 +133,6 @@ de: [
 };
 
 
-/*
-// Function to create and append cards dynamically
-function populateCards() {
-    const cardContainer = document.getElementById("card-container");
-
-    cardsData.forEach(card => {
-        // Create card elements
-        const cardDiv = document.createElement("div");
-        cardDiv.classList.add("card");
-
-        const cardInnerDiv = document.createElement("div");
-        cardInnerDiv.classList.add("card-inner");
-
-        const cardFront = document.createElement("div");
-        cardFront.classList.add("card-front");
-        cardFront.style.backgroundColor = card.color;
-        cardFront.textContent = card.frontText;
-
-        const cardBack = document.createElement("div");
-        cardBack.classList.add("card-back");
-        cardBack.textContent = card.backText;
-
-        // Append elements
-        cardInnerDiv.appendChild(cardFront);
-        cardInnerDiv.appendChild(cardBack);
-        cardDiv.appendChild(cardInnerDiv);
-        cardContainer.appendChild(cardDiv);
-    });
-}
-
-// Populate the cards on page load
-document.addEventListener("DOMContentLoaded", populateCards);
-
-*/
 function populateCards(lang) {
     const cardContainer = document.getElementById("card-container");
     cardContainer.innerHTML = ""; // Clear existing cards
@@ -200,7 +163,7 @@ function populateCards(lang) {
     });
 }
 
-/*
+
 // Function to switch between languages
 function switchLanguage(lang) {
     const langData = translations[lang];
@@ -221,36 +184,25 @@ function switchLanguage(lang) {
     document.querySelector('.project-info h2').textContent = langData.projectInfo.title;
     document.querySelector('.project-info p').textContent = langData.projectInfo.description;
 
-    // Update iframe maps
-    updateMapLinks(lang);
-}
-
-*/
-
-function switchLanguage(lang) {
-    const langData = translations[lang];
-
-    // Update other UI elements
-    document.querySelector('header h1').textContent = langData.header;
-    document.querySelector('p').textContent = langData.description;
-    document.getElementById('opinions-header').textContent = langData.opinionsHeader;
-
-    // Update Get Involved Section
-    document.querySelector('.get-involved-section h2').textContent = langData.getInvolvedTitle;
-    document.querySelector('.get-involved-section p').textContent = langData.getInvolvedIntro;
-    const steps = document.querySelectorAll('.get-involved-section ol li');
-    steps.forEach((li, index) => {
-        li.textContent = langData.getInvolvedSteps[index];
+       // Update Button Texts
+    const buttons = document.querySelectorAll('#button-container button');
+    buttons.forEach((button, index) => {
+        button.textContent = langData.buttons[index];
     });
+    // Update ES Definition Title
+    document.getElementById('es-definition').textContent = langData.esDefinition.title;
 
-    // Update Project Info
-    document.querySelector('.project-info h2').textContent = langData.projectInfo.title;
-    document.querySelector('.project-info p').textContent = langData.projectInfo.description;
+    // Update Citation
+    const citationElement = document.querySelector('#ES-container + p');
+    citationElement.innerHTML = `According to <a href="https://link.springer.com/article/10.1007/s10113-015-0759-4" target="_blank">${langData.esDefinition.citation}</a>`;
 
+    // Update ES Buttons
+    const esButtons = document.querySelectorAll('#ES-container .ESbutton');
+    esButtons.forEach((button, index) => {
+        button.textContent = langData.esDefinition.buttons[index];
+    });
     // Update iframe maps
     updateMapLinks(lang);
-
-    // Populate cards with selected language
     populateCards(lang);
 }
 
@@ -289,7 +241,7 @@ langBtn.addEventListener('click', () => {
     langBtn.setAttribute('data-lang', newLang);
 });
 
-/*
+
 // Set the default language when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     const defaultLang = 'en'; // Set default language to English
@@ -314,11 +266,4 @@ buttons.forEach(button => {
         const mapFile = button.getAttribute('data-map');
         iframe.src = mapFile;
     });
-});*/
-
-document.addEventListener("DOMContentLoaded", () => {
-    const defaultLang = 'en'; // Set default language to English
-    langBtn.textContent = '🇬🇧 English';
-    langBtn.setAttribute('data-lang', defaultLang);
-    switchLanguage(defaultLang); // Also updates cards
 });
