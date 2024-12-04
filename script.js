@@ -1,9 +1,12 @@
 const buttons = document.querySelectorAll('.segmented-button');
 const iframe = document.getElementById('map-frame');
-const langBtn = document.getElementById('lang-btn'); 
-const citationElement = document.getElementById("citation"); 
+const lang = "en";
+//const langBtn = document.getElementById('lang-btn'); 
+
+
+
 // Map of translations for different languages
-const translations = {
+/*const translations = {
     en: {
         header: "The Map of Ecosystem Services",
         description: "Select an Ecosystem Service Category and explore it in Innsbruck!",
@@ -65,7 +68,7 @@ const translations = {
         }
     }
 };
-
+*/
 
 const cardTranslations = {
     en: [
@@ -133,6 +136,8 @@ de: [
 };
 
 
+
+
 function populateCards(lang) {
     const cardContainer = document.getElementById("card-container");
     cardContainer.innerHTML = ""; // Clear existing cards
@@ -162,8 +167,9 @@ function populateCards(lang) {
         cardContainer.appendChild(cardDiv);
     });
 }
+populateCards(lang);
 
-
+/*
 // Function to switch between languages
 function switchLanguage(lang) {
     const langData = translations[lang];
@@ -206,7 +212,8 @@ function switchLanguage(lang) {
     populateCards(lang);
 }
 
-
+*/
+/*
 // Function to update map links based on language
 function updateMapLinks(lang) {
     const mapBasePath = `maps/${lang}/`;
@@ -256,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('map-frame').src = firstButton.getAttribute('data-map');
     }
 });
-
+*/
 // Set up event listeners for segmented buttons to change maps
 buttons.forEach(button => {
     button.addEventListener('click', () => {

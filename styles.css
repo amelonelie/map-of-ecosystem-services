@@ -15,13 +15,6 @@
         font-family: 'Raleway', serif;
     }
     
-
-    .header-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-    }
     
 
     .language-switcher {
@@ -56,8 +49,8 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     .project-info {
-        max-width: 1270px; /* Match the width of the map */
-        margin: 40px auto; /* Center the section and give space */
+        max-width: 1270px; 
+        margin: 40px auto; 
         padding: 20px;
         text-align: left;
         border-radius: 10px;
@@ -114,7 +107,7 @@
 
     #map {
         width: 100%;
-        height: 800px; 
+        
         border: 4px solid #6495ED;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
