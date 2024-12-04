@@ -1,7 +1,7 @@
 const buttons = document.querySelectorAll('.segmented-button');
 const iframe = document.getElementById('map-frame');
-const langBtn = document.getElementById('lang-btn');  // Language button for the top-right corner
-
+const langBtn = document.getElementById('lang-btn'); 
+const citationElement = document.getElementById("citation"); 
 // Map of translations for different languages
 const translations = {
     en: {
@@ -170,7 +170,7 @@ function switchLanguage(lang) {
 
     document.querySelector('header h1').textContent = langData.header;
     document.querySelector('p').textContent = langData.description;
-    document.getElementById('opinions-header').textContent = langData.opinionsHeader;
+    //document.getElementById('opinions-header').textContent = langData.opinionsHeader;
 
     // Update Get Involved Section
     document.querySelector('.get-involved-section h2').textContent = langData.getInvolvedTitle;
