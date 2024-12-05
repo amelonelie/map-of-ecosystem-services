@@ -1,1 +1,0 @@
-var json_relevantpoints_0 = {"type":"FeatureCollection","name":"relevantpoints_0","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"id":"1","name":"Wildblumenwiese"},"geometry":{"type":"Point","coordinates":[11.397852574612751,47.274335525907212]}}]}
